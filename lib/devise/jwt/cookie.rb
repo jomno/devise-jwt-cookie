@@ -1,6 +1,6 @@
-require 'dry/configurable'
-require 'dry/auto_inject'
-require 'devise/jwt/cookie/strategy'
+require "dry/configurable"
+require "dry/auto_inject"
+require "devise/jwt/cookie/strategy"
 
 # Authentication library
 module Devise
@@ -14,8 +14,8 @@ module Devise
     module Cookie
       extend Dry::Configurable
 
-      setting :name, 'access_token'
-      setting :secure, true
+      setting :name, default: "access_token"
+      setting :secure, default: true
       setting :domain
 
       Import = Dry::AutoInject(config)
@@ -23,8 +23,8 @@ module Devise
   end
 end
 
-require 'devise/jwt/cookie/version'
-require 'devise/jwt/cookie/railtie'
-require 'devise/jwt/cookie/cookie_helper'
-require 'devise/jwt/cookie/middleware'
-require 'devise/jwt/cookie/models'
+require "devise/jwt/cookie/version"
+require "devise/jwt/cookie/railtie"
+require "devise/jwt/cookie/cookie_helper"
+require "devise/jwt/cookie/middleware"
+require "devise/jwt/cookie/models"
