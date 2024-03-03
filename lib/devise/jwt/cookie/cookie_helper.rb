@@ -24,6 +24,7 @@ module Devise
             value: token,
             path: '/',
             httponly: true,
+            same_site: 'None',
             secure: secure,
             expires: Time.at(jwt['exp'].to_i)
           }
